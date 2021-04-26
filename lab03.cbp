@@ -36,7 +36,11 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="histogram.cpp" />
+		<Unit filename="histogram.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="svg_module.cpp" />
+		<Unit filename="svg_module.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

@@ -58,7 +58,7 @@ show_histogram_svg(const vector<size_t>& bins) {
         svg_text(TEXT_LEFT, top + TEXT_BASELINE, to_string(bin));
         svg_rect(TEXT_WIDTH, top, bin_width, BIN_HEIGHT,"black", "#e3256b");
         double proc = round(((bin/numbers_count)*100));
-        string proc_s = to_sring(proc)+ "%";
+        string proc_s = to_string(static_cast<int>(proc))+ "%";
         svg_text(TEXT_LEFT+bin_width+5, top+TEXT_BASELINE, proc_s);
         top += BIN_HEIGHT;
     }
