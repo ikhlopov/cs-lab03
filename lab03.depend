@@ -7,12 +7,14 @@
 1619436987 c:\users\u211-05\desktop\cs-lab03\histogram.h
 	<vector>
 
-1619439460 source:c:\users\u211-05\desktop\cs-lab03\main.cpp
+1619444898 source:c:\users\u211-05\desktop\cs-lab03\main.cpp
 	<iostream>
 	<vector>
 	<curl/curl.h>
 	"histogram.h"
 	"svg_module.h"
+	<sstream>
+	<string>
 
 1619433589 c:\users\u211-05\desktop\cs-lab03\svg_module.h
 

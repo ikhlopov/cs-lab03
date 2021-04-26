@@ -14,9 +14,12 @@
 				<Compiler>
 					<Add option="-std=c17" />
 					<Add option="-g" />
+					<Add directory="cURL/include" />
 				</Compiler>
 				<Linker>
 					<Add option="-static" />
+					<Add library="libcurl.dll.a" />
+					<Add directory="cURL/lib" />
 				</Linker>
 			</Target>
 			<Target title="Release">
