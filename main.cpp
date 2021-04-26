@@ -33,7 +33,6 @@ read_input(istream& in, bool prompt) {
 
 int main(int argc, char* argv[])
 {
-
     curl_global_init(CURL_GLOBAL_ALL);
     if (argc>1) for(int i=0; i<argc; i++) cout<<"argv["<<i<<"] = "<<argv[i]<<endl;
     //Input data = read_input(cin, true);
