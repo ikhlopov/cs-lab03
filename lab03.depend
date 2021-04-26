@@ -6,11 +6,18 @@
 1619433589 c:\users\u211-05\desktop\cs-lab03\histogram.h
 	<vector>
 
-1619433589 source:c:\users\u211-05\desktop\cs-lab03\main.cpp
+1619435012 source:c:\users\u211-05\desktop\cs-lab03\main.cpp
 	<iostream>
 	<vector>
 	"histogram.h"
 	"svg_module.h"
 
 1619433589 c:\users\u211-05\desktop\cs-lab03\svg_module.h
+
+1619434029 source:c:\users\u211-05\desktop\cs-lab03\svg_module.cpp
+	<iostream>
+	<vector>
+	<math.h>
+	"histogram.h"
+	"svg_module.h"
 

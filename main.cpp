@@ -6,10 +6,11 @@ using namespace std;
 const size_t SCREEN_WIDTH = 80;
 const size_t MAX_ASTERISK = SCREEN_WIDTH - 3 - 1;
 
-vector<double> input_numbers(size_t count) { //функци€ ввода вектора
+vector<double>
+input_numbers(istream& in, size_t count) { //функци€ ввода вектора
     vector<double> result(count);
     for (size_t i = 0; i < count; i++) {
-        cin >> result[i];
+        in >> result[i];
     }
     return result;
 }
@@ -66,7 +67,7 @@ int main()
     cin >> number_count;
 
     cerr << "Enter numbers: ";
-    const auto numbers = input_numbers(number_count); //¬вод данных через функцию input_numbers
+    const auto numbers = input_numbers(cin, number_count); //¬вод данных через функцию input_numbers
 
     size_t bin_count;
     cerr << "Enter number bins: ";
