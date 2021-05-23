@@ -41,25 +41,33 @@ svg_rect(double x, double y, double width, double height, string stroke = "black
 
 void
 show_histogram_svg(const vector<size_t>& bins) {
-    size_t max_bin = bins[0];
+
+    size_t max_bin = bins[0];//поиск максимальной корзины
     for (size_t x : bins) {
         if (x > max_bin)max_bin = x;
      }
-    double numbers_count = 0;
+
+    double numbers_count = 0;//подсчет всех чисел
     for (size_t bin : bins) numbers_count+=bin;
-    bool scale_flag = false;
+
+    bool scale_flag = false; //Условие введения изображения в формат масштабирования
     if (max_bin*BLOCK_WIDTH > IMAGE_WIDTH-2*TEXT_WIDTH-5) scale_flag = true;
-    if(max_bin)
+
     svg_begin(IMAGE_WIDTH, IMAGE_HEIGHT);
     double top = 0;
     for (size_t bin : bins) {
-        double bin_width = bin*BLOCK_WIDTH;
-        if(scale_flag) bin_width = (static_cast<double>(bin)/max_bin)* (IMAGE_WIDTH-2*TEXT_WIDTH-5);
+
+        double bin_width; //Определение размера прямоугольника
+        if(scale_flag) bin_width = (static_cast<double>(bin)/max_bin) * (IMAGE_WIDTH-2*TEXT_WIDTH-5);
+        else bin_width = bin*BLOCK_WIDTH;
+
         svg_text(TEXT_LEFT, top + TEXT_BASELINE, to_string(bin));
         svg_rect(TEXT_WIDTH, top, bin_width, BIN_HEIGHT,"black", "#e3256b");
-        double proc = round(((bin/numbers_count)*100));
+
+        double proc = round(((bin/numbers_count)*100)); //расчет и выведение процента.
         string proc_s = to_string(static_cast<int>(proc))+ "%";
-        svg_text(TEXT_LEFT+bin_width+5, top+TEXT_BASELINE, proc_s);
+        svg_text(IMAGE_WIDTH-TEXT_WIDTH, top+TEXT_BASELINE, proc_s);
+
         top += BIN_HEIGHT;
     }
     svg_end();
