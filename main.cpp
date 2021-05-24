@@ -69,12 +69,21 @@ download(const string& address) {
 int main(int argc, char* argv[])
 {
     Input input;
-    if (argc > 1) {
-        input = download(argv[1]);
-    } else {
-        input = read_input(cin, true);
-    }
 
+    if (argc > 1){
+
+        for (int i = 0; i<argc; i++) {
+                if (strcmp(argv[i], "-bins")==0){
+                    //что делац если -bins
+                }
+
+                if (strncmp(argv[i], "http", 4)==0) {
+                    //что делац если ссылка
+                }
+        }
+    }
+    else read_input(cin, true);
+    return 0;
     const auto bins = make_histogram(input);
 
     show_histogram_svg(bins);
