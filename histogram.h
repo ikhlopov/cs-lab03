@@ -8,6 +8,12 @@ struct Input {
     size_t bin_count;
 };
 
+struct args {
+    int error = 0;
+    size_t bins = 0;
+    string url = "default";
+};
+
 void find_minmax(const vector<double>& numbers, double& min, double& max); //функция поиска min max
 
 vector<size_t> make_histogram(Input data);

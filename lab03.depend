@@ -67,3 +67,71 @@
 
 1619437901 c:\users\u211-05\desktop\cs-lab03\curl\include\curl\typecheck-gcc.h
 
+1621884302 source:c:\users\ilya\desktop\cs-lab03\histogram.cpp
+	<vector>
+	<iostream>
+	"histogram.h"
+
+1621886801 c:\users\ilya\desktop\cs-lab03\histogram.h
+	<vector>
+
+1621884302 source:c:\users\ilya\desktop\cs-lab03\svg_module.cpp
+	<iostream>
+	<vector>
+	<math.h>
+	"histogram.h"
+	"svg_module.h"
+
+1621884302 c:\users\ilya\desktop\cs-lab03\svg_module.h
+
+1621889017 source:c:\users\ilya\desktop\cs-lab03\main.cpp
+	<iostream>
+	<vector>
+	<curl/curl.h>
+	"histogram.h"
+	"svg_module.h"
+	<sstream>
+	<string>
+
+1621884302 c:\users\ilya\desktop\cs-lab03\curl\include\curl\curl.h
+	"curlver.h"
+	"system.h"
+	<stdio.h>
+	<limits.h>
+	<osreldate.h>
+	<sys/types.h>
+	<time.h>
+	<winsock2.h>
+	<ws2tcpip.h>
+	<sys/select.h>
+	<sys/socket.h>
+	<sys/time.h>
+	<support/SupportDefs.h>
+	"easy.h"
+	"multi.h"
+	"urlapi.h"
+	"options.h"
+	"typecheck-gcc.h"
+
+1621884302 c:\users\ilya\desktop\cs-lab03\curl\include\curl\curlver.h
+
+1621884302 c:\users\ilya\desktop\cs-lab03\curl\include\curl\system.h
+	<winsock2.h>
+	<windows.h>
+	<ws2tcpip.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<sys/poll.h>
+
+1621884302 c:\users\ilya\desktop\cs-lab03\curl\include\curl\easy.h
+
+1621884302 c:\users\ilya\desktop\cs-lab03\curl\include\curl\multi.h
+	"curl.h"
+
+1621884302 c:\users\ilya\desktop\cs-lab03\curl\include\curl\urlapi.h
+	"curl.h"
+
+1621884302 c:\users\ilya\desktop\cs-lab03\curl\include\curl\options.h
+
+1621884302 c:\users\ilya\desktop\cs-lab03\curl\include\curl\typecheck-gcc.h
+

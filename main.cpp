@@ -7,6 +7,26 @@
 #include <string>
 using namespace std;
 
+args
+arg_checker (int& argc,char* argv[]){
+    args result;
+    for (int i = 0; i<argc; i++) {
+            if (strcmp(argv[i], "-bins")==0){
+                if ( atoi(argv[i+1]) > 0 ) result.bins = atoi(argv[i+1]);
+                else {
+                        cout<<"maybe you meant -bins <bins_count>"<<endl;
+                        result.error = -27;
+                        return result;
+                }
+            }
+
+            if (strncmp(argv[i], "http", 4)==0) {
+                result.url = argv[i];
+            }
+        }
+    return result;
+}
+
 vector<double>
 input_numbers(istream& in, size_t count) { //функция ввода вектора
     vector<double> result(count);
@@ -17,7 +37,7 @@ input_numbers(istream& in, size_t count) { //функция ввода вектора
 }
 
 Input
-read_input(istream& in, bool prompt) {
+read_input(istream& in, bool prompt, int bins) {
     Input data;
 
     if(prompt) cerr << "Enter number count: ";
@@ -27,8 +47,11 @@ read_input(istream& in, bool prompt) {
     if(prompt) cerr << "Enter numbers: ";
     data.numbers = input_numbers(in, number_count);
 
-    if(prompt) cerr << "Enter bin count: ";
-    in >> data.bin_count;
+    if(prompt && !bins) {
+        cerr << "Enter bin count: ";
+        in >> data.bin_count;
+    }
+    else if (bins) data.bin_count = bins;
 
     return data;
 }
@@ -42,10 +65,10 @@ write_data(void* items, size_t item_size, size_t item_count, void* ctx) {
 }
 
 Input
-download(const string& address) {
+download(args in) {
     curl_global_init(CURL_GLOBAL_ALL);
     stringstream buffer;
-
+    string address = in.url;
 
     CURL* curl = curl_easy_init();
         if(curl) {
@@ -63,27 +86,21 @@ download(const string& address) {
             curl_easy_cleanup(curl);
     }
 
-    return read_input(buffer, false);
+    return read_input(buffer, false, in.bins);
 }
 
 int main(int argc, char* argv[])
 {
     Input input;
-
-    if (argc > 1){
-
-        for (int i = 0; i<argc; i++) {
-                if (strcmp(argv[i], "-bins")==0){
-                    //что делац если -bins
-                }
-
-                if (strncmp(argv[i], "http", 4)==0) {
-                    //что делац если ссылка
-                }
-        }
+    args args;
+    if (argc > 1) {
+        args = arg_checker(argc, argv);
+        if (args.error != 0) return args.error;
+        //cout << "Arrgs: \n bins: "<<args.bins<<"\n URL: "<< args.url<<endl;
     }
-    else read_input(cin, true);
-    return 0;
+
+    if (args.url != "default") input = download (args);
+    else input = read_input(cin, true, args.bins);
     const auto bins = make_histogram(input);
 
     show_histogram_svg(bins);
