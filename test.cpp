@@ -1,6 +1,8 @@
 #include "histogram.h"
-
+#include "svg_module.h"
+#include <vector>
 #include <cassert>
+#include <iostream>
 
 void
 test_positive() {
@@ -43,8 +45,24 @@ test_empty() {
     double max = 0;
     find_minmax({}, min, max);
     assert(min == 0);
-    assert(max == 1);
+    assert(max == 0);
 }
+//////////////////////////////////////
+void
+test2_pos(){
+    size_t i = 1;
+    vector<size_t> bins = {3, 2, 1};
+    string res = show_proc(bins, i, false);
+    assert(res == "33%");
+}
+
+test2_emp(){
+    size_t i = 1;
+    vector<size_t> bins = {};
+    string res = show_proc(bins, i, false);
+    assert(res == "");
+}
+
 int
 main() {
      test_positive();
@@ -52,4 +70,7 @@ main() {
      test_same();
      test_one();
      test_empty();
+
+     test2_pos();
+     test2_emp();
 }

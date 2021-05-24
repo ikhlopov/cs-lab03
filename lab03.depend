@@ -1,18 +1,19 @@
 # depslib dependency file v1.0
-1619433589 source:c:\users\u211-05\desktop\cs-lab03\histogram.cpp
+1621853467 source:c:\users\u211-05\desktop\cs-lab03\histogram.cpp
 	<vector>
 	"histogram.h"
 
-1619433589 c:\users\u211-05\desktop\cs-lab03\histogram.h
+1621853467 c:\users\u211-05\desktop\cs-lab03\histogram.h
 	<vector>
 
-1619433589 source:c:\users\u211-05\desktop\cs-lab03\main.cpp
+1621853467 source:c:\users\u211-05\desktop\cs-lab03\main.cpp
 	<iostream>
 	<vector>
 	"histogram.h"
 	"svg_module.h"
 
-1619433589 c:\users\u211-05\desktop\cs-lab03\svg_module.h
+1621858446 c:\users\u211-05\desktop\cs-lab03\svg_module.h
+	<string>
 
 1621800660 source:c:\users\ilya\desktop\cs-lab03\histogram.cpp
 	<vector>
@@ -28,4 +29,13 @@
 	"svg_module.h"
 
 1621799600 c:\users\ilya\desktop\cs-lab03\svg_module.h
+
+1621856809 source:c:\users\u211-05\desktop\cs-lab03\svg_module.cpp
+	<iostream>
+	<vector>
+	<string>
+	<math.h>
+	<windows.h>
+	"histogram.h"
+	"svg_module.h"
 
